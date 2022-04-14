@@ -1,0 +1,2 @@
+class AdminReservation < ApplicationRecord
+end

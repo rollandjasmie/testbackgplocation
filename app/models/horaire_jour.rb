@@ -1,0 +1,2 @@
+class HoraireJour < ApplicationRecord
+end

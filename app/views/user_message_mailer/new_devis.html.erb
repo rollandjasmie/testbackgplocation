@@ -1,0 +1,282 @@
+
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title> Un devis pour vous </title>
+    <meta name="description" content="Reset Password Email Template.">
+    <style type="text/css">
+        a:hover {text-decoration: underline !important;}
+    </style>
+</head>
+
+<body marginheight="0" topmargin="0" marginwidth="0" style="margin: 0px; background-color: #f2f3f8;" leftmargin="0">
+    <!--100% body table-->
+    <table cellspacing="0" border="0" cellpadding="0" width="100%" bgcolor="#f2f3f8"
+        style="@import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700|Open+Sans:300,400,600,700); font-family: 'Open Sans', sans-serif;">
+        <tr>
+            <td>
+                <table style="background-color: #f2f3f8; max-width:670px;  margin:0 auto;" width="100%" border="0"
+                    align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td style="height:80px;">&nbsp;</td>
+                    </tr>
+                   
+                    <tr>
+                        <td style="height:20px;">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0"
+                            style="max-width:670px;background:#ddd; border-radius:3px; text-align:center;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);" >
+                                <tr>
+                                    <td style="height:20px;">&nbsp;</td>
+                                </tr>
+                                    <tr >
+                                        <td style="height:20px;">&nbsp;</td>
+                                        <td align="left"> <img width="150" src="https://imgur.com/B1VTlIp.png" title="logo" alt="logo"/></td>
+                                        <td align="right" >
+                                            <table>
+                                                <tr>
+                                                    <th style="font-size:9px;">Date de creation : </th>
+                                                    <td style="font-size:9px;"><%= @dateCreation.strftime("%d-%m-%Y") %></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9px;">Fin de validité : </th>
+                                                    <td style="font-size:9px;"><%= @finValiditer.strftime("%d-%m-%Y") %></td>
+                                                </tr>
+                                                <tr>
+                                                    <th style="font-size:9px;">Commande ref : </th>
+                                                    <td style="font-size:9px;">R000<%=@reservation.id%></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                      <td style="height:20px;">&nbsp;</td>
+                                    </tr>
+                                <tr>
+                                    <td style="height:20px;">&nbsp;</td>
+                                </tr>
+                            </table>
+                            <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0"
+                                style="max-width:670px;background:#fff; border-radius:3px; text-align:center;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);">
+                                <tr>
+                                    <td style="height:40px;">&nbsp;</td>
+                                </tr>
+                               
+                                <tr>
+                                    <td align="left" style="padding:0 35px;">
+                                        <span  style="color:#1e1e2d; font-weight:500; margin:0;font-size:15px;font-family:'Rubik',sans-serif;">
+                                         <h3> Bonjour <%= @client.nom.upcase %> <%= @client.prenom.capitalize %>  </h3> 
+                                        </span>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td align="left" style="padding:0 35px;">
+                                        <span  style="color:#1e1e2d; font-weight:500; margin:0;font-size:15px;font-family:'Rubik',sans-serif;">
+                                         Nous avons le plaisir de vous faire part de votre devis ref R000<%=@reservation.id%>
+                                        </span>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td align="left" style="padding:0 35px;">
+                                        <span  style="color:#1e1e2d; font-weight:500; margin:0;font-size:15px;font-family:'Rubik',sans-serif;">
+                                         <% if @client.confirm_token %> 
+                                          Votre code par défaut est <strong>123456789</strong> veuillez le changer.
+                                          <% end %>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" style="padding:0 35px;">
+                                         <span
+                                            style="display:inline-block; vertical-align:middle; margin:29px 0 26px; border-bottom:1px solid #cecece; width:100%;"></span>
+                                    </td>
+                                </tr>
+                               
+                                <tr>
+                                    
+                                    <td>
+                                        <table align="left">
+                                            <tr>
+                                                <td>
+                                                    <h1 style=" padding:0 90px; color:#A39C9C; font-weight:500; margin:0;font-size:40px;font-family:'Rubik',sans-serif;">
+                                                        Vehicule </h1>
+                                                    <p></p>
+                                                </td>
+                                            </tr>
+                                            <tr align="right" style='font-size:10px;'>
+                                                <td style='padding:0 75px;'>Categorie : <%= @category.name %></td>
+                                            </tr>
+                                            <tr align="right" style='font-size:10px;'>
+                                                <td style='padding:0 75px;'>Duree : <%=@dure%> jr</td>
+                                                
+                                            </tr>
+                                            <tr align="right" style='font-size:10px;'>
+                                                <td style='padding:0 75px;'>Kilometrage Inclus : llimiter</td>
+                                                
+                                            </tr>
+                                        </table>
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <img width="250" src="<%= ENV['BACKEND_URL'] %>/<%=@photo%>" title="produit" alt="produit"/>
+                                                    
+                                                </td>
+                                                
+                                            </tr>
+                                        </table>
+                                        <span
+                                            style="display:inline-block; vertical-align:middle; margin:29px 0 26px; border-bottom:1px solid #cecece; width:100%;"></span>
+                                    
+                                    </td>
+                                    
+                                </tr>
+                                
+                                
+                                <tr>
+                                    <td>
+                                        <table align="left">
+                                            <tr>
+                                                <td>
+                                                    <h1 style=" padding:0 40px; color:#A39C9C; font-weight:500; margin:0;font-size:30px;font-family:'Rubik',sans-serif;">
+                                                        Depart </h1>
+                                                    <p></p>
+                                                </td>
+                                            </tr>
+                                            <tr align="right" style='font-size:10px;'>
+                                                <td style='padding:0 75px;'>Lieux: <%=@reservation.lieu_depart%></td>
+                                            </tr>
+                                            <tr align="right" style='font-size:10px;'>
+                                                <td style='padding:0 75px;'>Date : <%=@reservation.date_depart.strftime("%d-%m-%Y")%></td>
+                                                
+                                            </tr>
+        
+                                        </table>
+                                        <table align="right" style='border-left:1px solid #cecece;'>
+                                            <tr>
+                                                <td>
+                                                    <h1 style=" padding:0 40px; color:#A39C9C; font-weight:500; margin:0;font-size:30px;font-family:'Rubik',sans-serif;">
+                                                        Arriver </h1>
+                                                    <p></p>
+                                                </td>
+                                            </tr>
+                                            <tr align="left" style='font-size:10px;'>
+                                                <td style='padding:0 90px;'>Lieux: <%=@reservation.lieu_retour%></td>
+                                            </tr>
+                                            <tr align="left" style='font-size:10px;'>
+                                                <td style='padding:0 90px;'>Date :  <%=@reservation.date_retour.strftime("%d-%m-%Y")%></td>
+                                                
+                                            </tr>
+        
+                                        </table>
+                                       
+                                        <span
+                                            style="display:inline-block; vertical-align:middle; margin:29px 0 26px; border-bottom:1px solid #cecece; width:100%;"></span>
+                                    
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" style="max-width:670px; text-align:center;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);" >
+                                        <h1 style=" padding:0 50px; color:#A39C9C; font-weight:500; margin:0;font-size:25px;font-family:'Rubik',sans-serif;">
+                                            LIVRAISON / RESTITUTION</h1>
+                                            <tr align="center" style='font-size:10px;'>
+                                                
+                                                <td style='height:50px; padding:0 90px;'>
+                                                  <p> A l'aéroport Roland Garros : GP Location vous prend en charge personnellement à l'aéroport. Ceci vous évitera d'attendre au comptoir de l'aéroport après de nombreuses heures de vols et de payer la taxe d'aéroport. Saint-Denis : GP Location vous livre le véhicule à l'adresse de votre choix. Entrez simplement l'adresse dans le système avant le paiement. </p>
+                                                </td>
+                                            </tr>
+        
+                                        </table>
+                                       
+                                        
+                                    
+                                    </td>
+                                </tr>
+                            </table>
+                            <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0"
+                            style="max-width:670px;background:#ddd; border-radius:3px; text-align:center;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);" >
+                                <tr>
+                                    <td style="height:20px;">&nbsp;</td>
+                                </tr>
+                                <tr align="center">
+                                    <td style='font-size:25px; color:#228DCB;'>MONTANT DE LA DEVIS</td>
+                                </tr>
+                                
+                            </table>
+                            <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0"
+                            style="max-width:670px;background:#ddd; border-radius:3px; text-align:center;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);">
+                                <tr>
+                                    <td style="height:20px;">&nbsp;</td>
+                                </tr>
+                                
+                                <tr align="left">
+                                    <td style="width:25%;">&nbsp;</td>
+                                    
+                                </tr>
+                                
+                               
+                                <tr align="left">
+                                    <td style="width:25%;">&nbsp;</td>
+                                    <td style='font-size:15px; '>Montant total :</td>
+                                    <td style='font-size:15px;'><%=@reservation.prix%> €</td>
+                                    <td style="width:15%;">&nbsp;</td>
+                                </tr>
+                                <tr align="left">
+                                    <td style="width:25%;">&nbsp;</td>
+                                    <td style='font-size:15px; '>Acompte  :</td>
+                                    <td style='font-size:15px;'><%=@reservation.acompte%> € </td>
+                                    <td style="width:15%;">&nbsp;</td>
+                                </tr>
+     
+                            </table>
+                               <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0"
+                            style="max-width:670px;background:#ddd; border-radius:3px; text-align:center;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);">
+                                <tr>
+                                    <td style="height:20px;">&nbsp;</td>
+                                </tr>
+                                
+                                <tr align="center">
+                                    <td style="width:25%;">&nbsp;</td>
+                                    
+                                </tr>
+                                
+                               
+                                <tr align="center">
+                                    <td style="width:25%;">&nbsp;</td>
+                                    <td style='font-size:15px;'><a href="https://vigilant-archimedes-e5ecc1.netlify.app/paiment_devis/<%=@reservation.id%>/<%= @reservation.prix%>" style='font-size:10px; color:#228DCB'>Regler le montant total de reservation</a></td>
+                                    <td style="width:25%;">&nbsp;</td>
+                                </tr>
+                                <tr align="center">
+                                    <td style="width:25%;">&nbsp;</td>
+                                    <td style='font-size:15px;'> <a href="https://vigilant-archimedes-e5ecc1.netlify.app/paiment_devis/<%=@reservation.id%>/<%= @reservation.acompte%>" style='font-size:10px; color:#228DCB;'>Regler un acompte de <%=@reservation.acompte%> €</a></td>
+                                    <td style="width:25%;">&nbsp;</td>
+                                </tr>
+                                 <tr>
+                                    <td style="height:20px;">&nbsp;</td>
+                                </tr>
+     
+                            </table>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height:20px;">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">
+                            <p style="font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;">&copy; <strong>www.gplocation.fr</strong></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height:80px;">&nbsp;</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <!--/100% body table-->
+</body>
+
+</html>

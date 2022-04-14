@@ -1,0 +1,2 @@
+class Fermexception < ApplicationRecord
+end

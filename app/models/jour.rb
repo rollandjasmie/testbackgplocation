@@ -1,0 +1,3 @@
+class Jour < ApplicationRecord
+
+end
