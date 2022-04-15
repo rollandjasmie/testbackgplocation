@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "/", to: "home#index"
   get "analytics/show"
   resources :paimentpartiels
   resources :reservations
