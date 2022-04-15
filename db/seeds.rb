@@ -1,16 +1,27 @@
 
-
+AdminUser.destroy_all
+Category.destroy_all
+BaseTarif.destroy_all
+HoraireJour.destroy_all
+Saison.destroy_all
+DateSaison.destroy_all
+TarifPersonalise.destroy_all
+Reservation.destroy_all
 # #place: rand(4..5), vitesse: "manuelle", types: Faker::Vehicle.fuel_type, climatiseur: true, status:"occupé", portes: Faker::Vehicle.door_count
 
 AdminUser.create(username: 'admin', email: 'admin@gmail.com', password: 'admin')
-
+puts"================================================="
+puts "AdminUser"
+puts"================================================="
 cat1 = Category.create( ref:'catA', name: 'Categorie A',stock: 2, enligne: true, duree_min_bs: 5, duree_min_ms: 5, duree_min_hs: 5)
 cat2 = Category.create( ref:'catB', name: 'Categorie B',stock: 0, enligne: true, duree_min_bs: 5, duree_min_ms: 5, duree_min_hs: 5)
 cat3 = Category.create( ref:'catC', name: 'Categorie C', stock: 11, enligne: true, duree_min_bs: 3, duree_min_ms: 3, duree_min_hs: 2 )
 cat4 = Category.create( ref:'catD', name: 'Categorie D Diesel',stock: 0 , enligne: true, duree_min_bs: 5, duree_min_ms: 5, duree_min_hs: 5)
 cat5 = Category.create( ref:'catE', name: 'Categorie E Diesel',stock: 11 , enligne: true,duree_min_bs: 3, duree_min_ms: 3, duree_min_hs: 2 )
 cat6 = Category.create( ref:'catE +', name: 'Categorie E Diesel Auto',stock: 1, enligne: true, duree_min_bs: 3, duree_min_ms: 3, duree_min_hs: 3)
-
+puts"================================================="
+puts "category"
+puts"================================================="
 value = Category.all
 value.each do |v|
     if v.ref === 'catA' || v.ref === 'catB'
@@ -181,12 +192,19 @@ value.each do |v|
     end
 end
 
+puts"================================================="
+puts "base tarif"
+puts"================================================="
 HoraireJour.create(nomjour: 'Dimanche', heuredebut: '20:30', heurefin: '23:45', prixsurplus: 20)
-
+puts"================================================="
+puts "horaire"
+puts"================================================="
 Saison.create( nomsaison: "Basse Saison", couleur: "bleu")
 Saison.create( nomsaison: "Haute Saison", couleur: "rouge")
 Saison.create( nomsaison: "Moyenne Saison", couleur: "jaune")
-
+puts"================================================="
+puts "saison"
+puts"================================================="
 DateSaison.create(debutsaison: "2021-01-06", finsaison: "2021-01-15", saison_id: Saison.last.id)
 DateSaison.create(debutsaison: "2021-02-04", finsaison: "2021-03-06", saison_id: Saison.last.id)
 DateSaison.create(debutsaison: "2021-04-01", finsaison: "2021-05-02", saison_id: Saison.last.id)
@@ -195,7 +213,9 @@ DateSaison.create(debutsaison: "2021-10-01", finsaison: "2021-10-15", saison_id:
 DateSaison.create(debutsaison: "2021-01-01", finsaison: "2021-01-05", saison_id: Saison.second.id)
 DateSaison.create(debutsaison: "2021-10-01", finsaison: "2021-11-30", saison_id: Saison.second.id)
 DateSaison.create(debutsaison: "2021-12-01", finsaison: "2021-12-31", saison_id: Saison.second.id)
-
+puts"================================================="
+puts "date de saison"
+puts"================================================="
 TarifPersonalise.create(
     datedebutperso: "2021-07-15",
     datefinperso: "2021-08-21",
@@ -341,7 +361,9 @@ TarifPersonalise.create(
     jourdebut: 21,
     jourfin: 365
     )
-
+    puts"================================================="
+    puts "tarif personamise"
+    puts"================================================="
 # # DateSaison.create(debutsaison: Date.new(2020,1,4), finsaison: Date.new(2020,6,5),saison_id:1)
 # # DateSaison.create(debutsaison: Date.new(2020,6,6), finsaison: Date.new(2020,8,30),saison_id:2)
 # # DateSaison.create(debutsaison: Date.new(2020,9,1), finsaison: Date.new(2020,12,31),saison_id:3)
@@ -364,5 +386,7 @@ TarifPersonalise.create(
 Reservation.create(date_depart: Date.new(2021,6,1), date_retour: Date.new(2021,6,7), heure_depart: "7:00", heure_retour: "19:10", prix: 201, 
 voiture_id: 2,  numero_vol: "430AF", client_id: 4)
 
-
+puts"================================================="
+puts "reservation"
+puts"================================================="
 # HoraireJour.create(nomjour: 'Lundi', heuredebut: '20:30', heurefin: '23:45', prixsurplus: 20)
